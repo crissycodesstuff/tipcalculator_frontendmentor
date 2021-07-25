@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <meta name="description" content="Tip calculator app">
+  <meta name="keywords" content="HTML, SCSS, CSS, Javascript, Frontend-Mentor">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="./css/main.css">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+
+<body>
+  <div class="main-container">
+    <img src="./images/logo.svg" alt="Splitter logo" class="logo">
+
+    <main class="calculator">
+      <div class="container">
+        <!--THIS IS THE BILL SECTION-->
+        <section class="bill">
+          <h2 class="bill__title">Bill</h2>
+          <label for="bill" class="input__label"></label>
+          <span class="input__warning">Can't be zero</span>
+          <input type="number" name="bill" id="bill" class="input__field" placeholder="0" maxlength="8">
+        </section>
+
+        <!-- THIS IS THE TIP SECTION -->
+        <section class="tip">
+          <h2 class="tip__title">Select Tip %</h2>
+
+          <div class="btn-container">
+            <button data-value="5" class="btn btn-tip">5%</button>
+            <button data-value="10" class="btn btn-tip">10%</button>
+            <button data-value="15" class="btn btn-tip">15%</button>
+            <button data-value="25" class="btn btn-tip">25%</button>
+            <button data-value="50" class="btn btn-tip">50%</button>
+            <label for="custom-tip"></label>
+            <span class="input__warning"></span>
+            <input type="number" name="custom-tip" id="custom-tip" class="btn input-custom" placeholder="Custom"
+              maxlength="3">
+          </div>
+        </section>
+
+        <!-- THIS IS THE PEOPLE SECTION-->
+        <section class="people">
+          <h2 class="people__title">Number of People</h2>
+          <label for="people" class="input__label input__label--people-icon"></label>
+          <span class="input__warning">Can't be zero</span>
+          <input type="number" name="people" id="people" placeholder="0" class="input__field" maxlength="3">
+        </section>
+      </div>
+
+      <!-- THIS IS THE ACCOUNT SECTION -->
+      <section class="account">
+
+        <!-- THIS IS THE TIP SECTION -->
+        <div class="tip-amount">
+          <h2 class="tip-amount__title"> Tip Amount<span class="advice">/ person</span></h2>
+          <p class="tip-amount__amount-per-person">$0.00</p>
+        </div>
+
+        <!-- THIS IS THE TOTAL SECTION  -->
+        <div class="total">
+          <h2 class="total__title"> Total<span class="advice">/ person</span></h2>
+          <p class="total__amount-per-person">$0.00</p>
+        </div>
+
+        <!-- THIS IS THE RESET SECTION  -->
+        <button class="btn btn-reset" disabled>Reset</button>
+      </section>
+    </main>
+
+    <!-- THIS IS THE FOOTER SECTION  -->
+    <div class="attribution">
+      <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          rel="noreferrer noopener">Frontend Mentor</a>.</p>
+      <p>Coded by <a href="https://https://github.com/crissycodesstuff" target="_blank" rel="noreferrer noopener">
+          Crissy Grossley</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="./js/app.js"></script>
+</body>
