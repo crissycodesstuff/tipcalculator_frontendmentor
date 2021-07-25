@@ -1,0 +1,102 @@
+// ********************
+//       LABELS
+// ********************
+
+.input {
+  // Label
+  &__label {
+    display: block;
+    position: relative;
+    width: 100%;
+
+    &::before {
+      content: url(../../images/icon-dollar.svg);
+      position: absolute;
+      left: 1rem;
+      top: 1.6rem;
+      width: auto;
+      height: auto;
+    }
+
+    &::after {
+      content: attr(data-warning);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 10rem;
+      height: 5rem;
+      z-index: 100;
+      color: red;
+    }
+
+    &--people-icon {
+      &::before {
+        content: url(../../images/icon-person.svg);
+      }
+    }
+  }
+
+  // Field
+  &__field {
+    background-color: $Light-grayish-cyan;
+    border: 2px solid $Light-grayish-cyan;
+    border-radius: 1rem;
+    color: $Very-dark-cyan;
+    cursor: pointer;
+    text-align: right;
+    font-size: 2rem;
+    font-family: $main-font;
+    font-weight: 700;
+    outline: none;
+    padding: 1rem;
+    width: 100%;
+    transition: all 0.5s;
+
+    &:hover {
+      border-color: $body-bg-color;
+    }
+
+    &:focus {
+      border-color: $cyan;
+    }
+
+    &::placeholder {
+      color: $Dark-grayish-cyan-2;
+    }
+  }
+
+  // Warning
+  &__warning {
+    color: $warning-color;
+    font-size: 1.3rem;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+
+    &--active {
+      display: inline-block;
+
+      & + input {
+        border: 1px solid $warning-color;
+
+        &:focus {
+          border: 1px solid $warning-color;
+        }
+      }
+    }
+  }
+
+  // Custom
+  &-custom {
+    @extend .btn;
+    @extend .input__field;
+    width: 11.5rem;
+    padding: 0.6rem 1rem 0.6rem 0;
+
+    &:hover {
+      background-color: $Light-grayish-cyan;
+    }
+  }
+}

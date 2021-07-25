@@ -1,0 +1,41 @@
+// ***************************************
+//        MAIN CONTAINER
+// ***************************************
+
+.main-container {
+  background-color: $body-bg-color;
+  min-height: 100vh;
+  text-align: center;
+
+  @include for-medium-screens {
+    @include flexbox;
+  }
+
+  @media screen and(max-height:670px) {
+    min-height: 750px;
+  }
+}
+
+// Logo
+.logo {
+  margin: 4rem auto;
+}
+
+// Attribution footer
+.attribution {
+  background-color: $White;
+  padding: 2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  @include for-medium-screens {
+    position: absolute;
+    background-color: transparent;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  a {
+    color: $Very-dark-cyan;
+  }
+}

@@ -1,0 +1,74 @@
+// **************************
+//         BUTTONS
+// **************************
+
+.btn {
+  background-color: $Very-dark-cyan;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  font: {
+    family: $main-font;
+    size: 2rem;
+    weight: 700;
+  }
+
+  outline: none;
+  color: $White;
+  padding: 0.6rem 0;
+  transition: all 0.5s;
+
+  &:hover {
+    background-color: $hover-cyan;
+    color: $Very-dark-cyan;
+  }
+
+  &-reset {
+    background-color: $cyan;
+    color: $Very-dark-cyan;
+    font-weight: 700;
+    font-size: 1.5rem;
+    width: 100%;
+    text-transform: uppercase;
+    margin-top: 3rem;
+
+    @include for-large-screens {
+      padding: 1.5rem 0;
+    }
+
+    &:hover {
+      transform: scale(1.01);
+    }
+
+    &:active {
+      background-color: $cyan;
+      transform: scale(1);
+    }
+
+    &:disabled {
+      opacity: 0.2;
+      cursor: not-allowed;
+      user-select: none;
+
+      &:hover,
+      &:active {
+        background-color: $cyan;
+        transform: none;
+      }
+    }
+  }
+
+  &-tip {
+    width: 11.5rem;
+
+    &--active {
+      color: $Very-dark-cyan;
+      background-color: $cyan;
+
+      &:hover {
+        background-color: $cyan;
+      }
+    }
+  }
+}

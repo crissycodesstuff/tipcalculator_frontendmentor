@@ -1,0 +1,152 @@
+// **************************
+//      CALCULATOR
+// **************************
+
+.calculator {
+  @include flexbox;
+  background-color: $White;
+  border-radius: 1rem 1rem 0 0;
+  padding: 3rem 0;
+  text-align: left;
+  width: 100%;
+
+  @include for-medium-screens {
+    border-radius: 2rem;
+    max-width: 60rem;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  @include for-large-screens {
+    max-width: 80rem;
+  }
+
+  .container {
+    @include flexbox;
+    width: 100%;
+    max-width: 30rem;
+
+    @include for-large-screens {
+      max-width: 45%;
+    }
+  }
+}
+
+// Bill section//
+.bill {
+  margin: 2rem 0;
+  width: 90%;
+  max-width: 25rem;
+  position: relative;
+
+  @include for-large-screens {
+    width: 100%;
+    margin: 0;
+    max-width: 40rem;
+  }
+
+  &__title {
+    color: $Dark-grayish-cyan;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+}
+
+// Tip section//
+.tip {
+  @extend .bill;
+
+  @include for-large-screens {
+    margin: 4rem 0;
+  }
+
+  &__title {
+    @extend .bill__title;
+  }
+
+  .btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    justify-content: space-between;
+
+    @include for-large-screens {
+      row-gap: 1.5rem;
+    }
+  }
+}
+
+// People section//
+.people {
+  @extend .bill;
+
+  &__title {
+    @extend .bill__title;
+  }
+}
+
+// Total account section//
+.account {
+  background-color: $Very-dark-cyan;
+  border-radius: 2rem;
+  padding: 3rem 2rem;
+  width: 90%;
+  max-width: 25rem;
+
+  @include for-large-screens {
+    max-width: 45%;
+    padding: 3rem;
+  }
+
+  .tip-amount {
+    display: flex;
+    font-size: 0.8rem;
+    justify-content: space-between;
+    align-items: center;
+
+    @include for-large-screens {
+      margin: 1rem 0;
+      font-size: 1rem;
+    }
+
+    &__title {
+      color: $White;
+    }
+
+    .advice {
+      display: block;
+      color: $Dark-grayish-cyan;
+    }
+
+    &__amount-per-person {
+      color: $cyan;
+      font-size: 2.4rem;
+
+      @include for-large-screens {
+        font-size: 4rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .total {
+    @extend .tip-amount;
+    margin-top: 3rem;
+
+    @include for-medium-screens {
+      margin-bottom: 7rem;
+    }
+
+    &__title {
+      @extend .tip-amount__title;
+    }
+
+    .advice {
+      @extend .advice;
+    }
+
+    &__amount-per-person {
+      @extend .tip-amount__amount-per-person;
+    }
+  }
+}
